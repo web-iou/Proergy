@@ -1,0 +1,5 @@
+<!-- res/values-night/themes.xml -->
+<resources>
+    <style name="Theme.Proergy" parent="Theme.AppCompat.NoActionBar">
+    </style>
+</resources>

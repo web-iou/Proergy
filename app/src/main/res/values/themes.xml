@@ -1,0 +1,6 @@
+<!-- res/values/themes.xml -->
+<resources>
+    <style name="Theme.Proergy" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+    <!-- Brand -->
+    <color name="brand_primary">#E60005</color>
+    <color name="brand_secondary">#B3001F</color>
+    <color name="brand_tertiary">#ECA1A4</color>
+    <color name="brand_quaternary">#F2D2D3</color>
+
+    <!-- Neutral -->
+    <color name="line1">#E6E6E6</color>
+    <color name="line2">#BFBFBF</color>
+    <color name="fill1">#F5F6F7</color>
+    <color name="fill2">#FFFFFF</color>
+    <color name="fill3">#F5F5F5</color>
+    <color name="fill4">#F0F0F0</color>
+    <color name="text1">#262626</color>
+    <color name="text2">#595959</color>
+    <color name="text3">#8C8C8C</color>
+    <color name="text4">#BFBFBF</color>
+    <color name="text5">#D9D9D9</color>
+
+    <!-- Accent -->
+    <color name="blue1">#33A0FF</color>
+    <color name="blue2">#EAF4FE</color>
+    <color name="blue3">#9BD0FF</color>
+    <color name="orange1">#FF971F</color>
+    <color name="orange2">#FEF2E5</color>
+    <color name="orange3">#FECF9C</color>
+    <color name="red1">#F74A4B</color>
+    <color name="red2">#FFF0F0</color>
+    <color name="yellow1">#FBBF24</color>
+    <color name="yellow2">#FCF4D6</color>
+    <color name="yellow3">#FCEAA4</color>
+    <color name="green1">#13C773</color>
+    <color name="green2">#E2F8EF</color>
+    <color name="green3">#A1ECCE</color>
+</resources>
