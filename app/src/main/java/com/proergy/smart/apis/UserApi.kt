@@ -1,9 +1,7 @@
 package com.proergy.smart.apis
 
-import com.proergy.smart.utils.AesUtil
 import retrofit2.http.GET
 import retrofit2.Response
-import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

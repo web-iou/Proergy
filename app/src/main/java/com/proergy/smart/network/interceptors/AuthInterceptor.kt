@@ -20,22 +20,20 @@ class AuthInterceptor : Interceptor {
         val skipAuth = request.tag(Invocation::class.java)
             ?.method()
             ?.getAnnotation(SkipAuth::class.java) != null
-
+        val newRequest = request.newBuilder()
+        newRequest.addHeader("RSC","app").addHeader("LNG","zh-CN")
         if (skipAuth) {
-            return chain.proceed(request.newBuilder().addHeader("Authorization", BasicAuth).build())
-        }
-
-        val token = TokenManager.token
-
-        val newRequest = if (!token.isNullOrEmpty()) {
-            request.newBuilder()
-                .removeHeader("skipAuth")
-                .addHeader("Authorization", "Bearer $token")
-                .build()
+            newRequest.removeHeader("skipAuth")
         } else {
-            request
+            val token = TokenManager.token
+            if (token.isNullOrEmpty()) {
+                newRequest
+                    .addHeader("Authorization", "Bearer $token")
+            } else {
+                newRequest.addHeader("Authorization", BasicAuth)
+            }
         }
 
-        return chain.proceed(newRequest)
+        return chain.proceed(newRequest.build())
     }
 }
