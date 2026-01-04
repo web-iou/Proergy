@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -20,9 +21,10 @@ class SplashView @JvmOverloads constructor(
     init {
         LayoutInflater.from(context)
             .inflate(R.layout.splash_screen, this, true)
+        startAnimate()
     }
 
-    fun startAnimate(onEnd: () -> Unit) {
+    fun startAnimate() {
         // findViewById / ViewBinding
         val logo = findViewById<ImageView>(R.id.logo)
         val alphaAnimator = ObjectAnimator.ofFloat(
@@ -36,7 +38,17 @@ class SplashView @JvmOverloads constructor(
             interpolator = AccelerateDecelerateInterpolator() // 插值器（先加速后减速，更自然）
             addListener(object : AnimatorListenerAdapter(){
                 override fun onAnimationEnd(animation: Animator) {
-                    onEnd()
+                    this@SplashView.animate()
+                        .alpha(0f)
+                        .setDuration(500)
+                        .setInterpolator(AccelerateDecelerateInterpolator())
+                        .setListener(object : AnimatorListenerAdapter() {
+                            override fun onAnimationEnd(animation: Animator) {
+                                // 动画结束后移除视图
+                                (parent as? ViewGroup)?.removeView(this@SplashView)
+                            }
+                        })
+                        .start()
                 }
             })
         }

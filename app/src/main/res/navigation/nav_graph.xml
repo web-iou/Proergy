@@ -2,8 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/auth_graph">
-
+    app:startDestination="@+id/AdsPreview">
+    <fragment android:id="@+id/AdsPreview" android:name="com.proergy.smart.ui.pages.AdsPreview"/>
     <!-- 未登录 -->
     <navigation
         android:id="@+id/auth_graph"
